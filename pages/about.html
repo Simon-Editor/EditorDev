@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EditorDev | Software Dev, Designer & CV Writer</title>
+  <meta name="description" content="EditorDev - Professional Software Developer, Graphic Designer, and CV Writer.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+
+    <!-- AOS Styles -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="shadow sticky top-0 z-50 bg-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="/assets/images/logo.png" alt="EditorDev Logo" class="h-8 md:h-10">
+        <span class="font-bold text-lg md:text-xl text-indigo-600">EditorDev</span>
+      </a>  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/services.html" class="nav-link">Services</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
+        <a href="/pages/blog.html" class="nav-link">Blog</a>
+        <a href="/assets/files/EditorDev-CV.pdf" download class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Download CV</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <div class="md:hidden">
+        <button id="nav-toggle" class="focus:outline-none relative w-6 h-6 flex flex-col justify-between">
+          <span class="line block w-full h-0.5 bg-black transition-transform duration-500"></span>
+          <span class="line block w-full h-0.5 bg-black transition-opacity duration-500"></span>
+          <span class="line block w-full h-0.5 bg-black transition-transform duration-500"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 md:hidden px-6">
+      <nav class="flex flex-col space-y-4 py-4">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/services.html" class="nav-link">Services</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
+        <a href="/pages/blog.html" class="nav-link">Blog</a>
+        <a href="/assets/files/EditorDev-CV.pdf" download 
+           class="inline-block w-auto bg-indigo-600 text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-indigo-700 transition self-start">
+          Download CV
+        </a>
+      </nav>
+    </div>
+  </header>
+
+   <!-- Loader -->
+  <div id="preloader"
+    class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
+  </div>
+
+  <!-- Main Content Wrapper with flex-grow -->
+<main class="flex-grow">
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 md:px-0 bg-[#ffff]" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12" data-aos="fade-up" data-aos-delay="50">About Me</h2>
+
+      <div class="flex flex-col md:flex-row md:space-x-12 justify-center items-start">
+        <!-- Intro Card -->
+        <div class="bg-white shadow-md rounded-2xl p-8 mb-8 md:mb-0 w-full md:w-1/2 text-center" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-4">My introduction</h3>
+          <p class="text-gray-600 mb-6">
+            I am well-versed in HTML, CSS and JavaScript, and other cutting edge frameworks and libraries,
+            which allows me to implement interactive features. Additionally, I have experience working with
+            content management systems (CMS) like WordPress. I am also a professional CV & Resume Writer.
+          </p>
+          <a href="/assets/files/EditorDev-CV.pdf" download
+            class="bg-indigo-600 text-white px-6 py-3 rounded-full inline-flex items-center gap-2 hover:bg-indigo-700 transition">
+            Download CV 
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v16h16V4H4zm4 8l4 4 4-4M12 4v8"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Skills Lists -->
+        <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-delay="150">
+          <!-- Frontend -->
+          <div>
+            <h4 class="text-lg font-semibold mb-2">Frontend</h4>
+            <div class="flex flex-wrap gap-2 skill-group" data-skill-group="frontend">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">CV & Resume Writer</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div>
+            <h4 class="text-lg font-semibold mb-2">Backend</h4>
+            <div class="flex flex-wrap gap-2 skill-group" data-skill-group="backend">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">C++</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div>
+            <h4 class="text-lg font-semibold mb-2">Database</h4>
+            <div class="flex flex-wrap gap-2 skill-group" data-skill-group="database">
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Services Section -->
+<section id="services" class="py-16 px-4 md:px-0 bg-[#ffff]" data-aos="fade-up">
+  <div class="container mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-12" data-aos="fade-up" data-aos-delay="50">My Services</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service Card: Completed Projects -->
+      <a href="/pages/completed-projects.html" class="block transition hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon">
+            <!-- Heroicon: Briefcase -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 12v0m-6 0h12M9 3h6a1 1 0 011 1v1h2a2 2 0 012 2v3H4V7a2 2 0 012-2h2V4a1 1 0 011-1zM4 12v5a2 2 0 002 2h12a2 2 0 002-2v-5" />
+            </svg>
+          </div>
+          <h3 class="service-title">Completed</h3>
+          <p class="service-text">5+ Finished Projects</p>
+        </div>
+      </a>
+
+      <!-- Service Card: Testimonials -->
+      <a href="/pages/testimonials.html" class="block transition hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon">
+            <!-- Heroicon: Users -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 110 7.75 4 4 0 010-7.75zM8 3.13a4 4 0 110 7.75 4 4 0 010-7.75z" />
+            </svg>
+          </div>
+          <h3 class="service-title">Clients</h3>
+          <p class="service-text">5+ Happy Clients</p>
+        </div>
+      </a>
+
+      <!-- Service Card: Experience -->
+      <a href="/pages/experience.html" class="block transition hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card">
+          <div class="service-icon">
+            <!-- Heroicon: Badge Check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4M7 7l1.586-1.586a2 2 0 012.828 0L12 6l.586-.586a2 2 0 012.828 0L17 7l.586.586a2 2 0 010 2.828L17 11l.586.586a2 2 0 010 2.828L17 15l-.586.586a2 2 0 01-2.828 0L12 15l-.586.586a2 2 0 01-2.828 0L7 15l-.586-.586a2 2 0 010-2.828L7 11l-.586-.586a2 2 0 010-2.828L7 7z" />
+            </svg>
+          </div>
+          <h3 class="service-title">Experience</h3>
+          <p class="service-text">3+ Years in the field</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Floating Vertical Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col items-center gap-2 z-50">
+  <!-- Floating Contact Icon -->
+  <a href="/pages/contact.html"
+     class="bg-indigo-600 text-white rounded-full w-10 aspect-square flex items-center justify-center shadow-lg hover:bg-indigo-700 transition">
+    <i class="uil uil-envelope text-xl"></i>
+  </a>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/233594289300" target="_blank"
+     class="bg-green-500 text-white rounded-full w-10 aspect-square flex items-center justify-center shadow-lg hover:bg-green-600 transition">
+    <i class="uil uil-whatsapp text-xl"></i>
+  </a>
+</div>
+
+
+
+  <!-- Footer stays at bottom -->
+  <footer class="bg-gray-900 text-gray-100">
+    <div class="container mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <p class="text-sm">&copy; 2025 EditorDev. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-indigo-400 transition">LinkedIn</a>
+        <a href="#" class="hover:text-indigo-400 transition">GitHub</a>
+        <a href="#" class="hover:text-indigo-400 transition">Fiverr</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

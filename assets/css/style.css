@@ -1,0 +1,373 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.typing {
+  border-right: .1em solid #000;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4F46E5;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+#mobile-menu {
+  transition: max-height 0.5s ease-in-out;
+}
+
+
+#nav-icon.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* About section styles */
+/* Base card and skill badge stays same as before */
+#about {
+  font-family: 'Inter', sans-serif;
+}
+
+.skill-badge {
+  display: inline-block;
+  background: #6c5ce7;
+  color: #fff;
+  padding: 4px 10px; /* slightly smaller */
+  border-radius: 9px;
+  font-size: 0.75rem; /* smaller text */
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.skill-badge:hover {
+  filter: brightness(1.1);
+}
+
+.skill-group {
+  transition: all 0.5s ease;
+}
+
+#about .bg-white {
+  padding: 1.5rem; /* smaller padding on mobile */
+}
+
+#about h2 {
+  font-size: 1.5rem; /* smaller About Me heading */
+}
+
+#about h3 {
+  font-size: 1.125rem;
+}
+
+#about p {
+  font-size: 0.875rem; /* smaller paragraph */
+  line-height: 1.4;
+}
+
+#about a {
+  font-size: 0.75rem; /* smaller button text */
+  padding: 0.5rem 1rem; /* smaller button size */
+}
+
+/* Medium and up stays normal */
+@media (min-width: 768px) {
+  #about .bg-white {
+    padding: 2rem; /* normal for desktop */
+  }
+  #about h2 {
+    font-size: 2rem;
+  }
+  #about h3 {
+    font-size: 1.25rem;
+  }
+  #about p {
+    font-size: 1rem;
+  }
+  #about a {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+  .skill-badge {
+    font-size: 0.875rem;
+    padding: 4px 12px;
+  }
+}
+
+
+#services {
+  font-family: 'Inter', sans-serif;
+}
+
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 3rem 2rem;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #4F46E5; /* your indigo/purple */
+  transition: height 0.3s ease;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+.service-card:hover::before {
+  height: 100%;
+}
+
+.service-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-icon svg {
+  stroke: #4F46E5; /* icon color */
+  transition: stroke 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+  stroke: #fff; /* icon turns white on hover */
+}
+
+.service-title {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-text {
+  color: #555;
+}
+
+.service-card:hover .service-title,
+.service-card:hover .service-text {
+  color: #fff;
+}
+
+
+
+/* Contact  */
+
+.section {
+  padding: 80px 20px;
+  max-width: 1400px; /* Really wide for big desktop! */
+  width: 90%;         /* Fallback for responsiveness */
+  margin: 0 auto;
+}
+
+.top-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.top-header h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.top-header span {
+  color: #555;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+  min-width: 350px;
+  max-width: 550px; /* Wider cards for big screens */
+}
+
+.contact-info {
+  position: relative;
+  background-color: #4B4AEF;
+  color: #fff;
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+  overflow: hidden; /* Needed for pseudo-element */
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Reveal white */
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.contact-info:hover::before {
+  bottom: 0;
+}
+
+.contact-info * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info:hover {
+  color: #000;
+  text-align: center;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.contact-info p {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+}
+
+.modern-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  border-bottom-color: #4B4AEF;
+}
+
+.input-group label {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  color: #999;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.input-field:focus ~ label,
+.input-field:valid ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: #4B4AEF;
+}
+
+textarea.input-field {
+  resize: vertical;
+}
+
+.form-button {
+  text-align: left;
+}
+
+.btn {
+  background-color: #4B4AEF;
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3932d7;
+}
+
+.btn:hover i {
+  transform: translateX(5px);
+}
+
+.extra-info {
+  margin-top: 30px;         /* spacing from the box above */
+  padding: 0 20px;          /* side padding to align with the card */
+}
+
+.extra-info p {
+  font-size: 17px;          /* slightly larger font */
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #333;              /* nice dark gray for contrast */
+}
+
+.extra-info i {
+  margin-right: 6px;
+  color: inherit;           /* same color as text */
+}
+
+
+ .animate-fade {
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

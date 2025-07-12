@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EditorDev | Software Dev, Designer & CV Writer</title>
+  <meta name="description" content="EditorDev - Professional Software Developer, Graphic Designer, and CV Writer.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Styles -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="shadow sticky top-0 z-50 bg-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="/assets/images/logo.png" alt="EditorDev Logo" class="h-8 md:h-10">
+        <span class="font-bold text-lg md:text-xl text-indigo-600">EditorDev</span>
+      </a>  
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/services.html" class="nav-link">Services</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
+        <a href="/pages/blog.html" class="nav-link">Blog</a>
+        <a href="/assets/files/EditorDev-CV.pdf" download class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Download CV</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <div class="md:hidden">
+        <button id="nav-toggle" class="focus:outline-none relative w-6 h-6 flex flex-col justify-between">
+          <span class="line block w-full h-0.5 bg-black transition-transform duration-500"></span>
+          <span class="line block w-full h-0.5 bg-black transition-opacity duration-500"></span>
+          <span class="line block w-full h-0.5 bg-black transition-transform duration-500"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 md:hidden px-6">
+      <nav class="flex flex-col space-y-4 py-4">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+        <a href="/pages/services.html" class="nav-link">Services</a>
+        <a href="/pages/contact.html" class="nav-link">Contact</a>
+        <a href="/pages/blog.html" class="nav-link">Blog</a>
+        <a href="/assets/files/EditorDev-CV.pdf" download 
+           class="inline-block w-auto bg-indigo-600 text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-indigo-700 transition self-start">
+          Download CV
+        </a>
+      </nav>
+    </div>
+  </header>
+
+   <!-- Loader -->
+  <div id="preloader"
+    class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-600"></div>
+  </div>
+
+
+<!-- Experience Page Section -->
+<section class="py-16 px-4 flex-grow" id="experience">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">My Experience</h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      I have over 3 years of professional experience delivering quality software, graphic design, and CV writing services to clients across different industries.
+    </p>
+
+    <!-- Highlights -->
+    <div class="grid gap-8 md:grid-cols-3 mb-12">
+      <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-4xl font-bold text-indigo-600 mb-2 counter" data-target="3">0</h3>
+        <p class="font-semibold">Years Experience</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-4xl font-bold text-indigo-600 mb-2 counter" data-target="10">0</h3>
+        <p class="font-semibold">Completed Projects</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-4xl font-bold text-indigo-600 mb-2 counter" data-target="5">0</h3>
+        <p class="font-semibold">Happy Clients</p>
+      </div>
+    </div>
+
+    <!-- Skills & Progress Bars -->
+    <div class="max-w-4xl mx-auto text-left mb-12">
+      <h3 class="text-2xl font-bold mb-6">My Core Skills</h3>
+
+      <div class="mb-6" data-aos="fade-right">
+        <div class="flex justify-between mb-1">
+          <span class="font-medium">Web Development</span>
+          <span>90%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-indigo-600 h-2 rounded-full progress-bar" data-width="90%"></div>
+        </div>
+      </div>
+
+      <div class="mb-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="flex justify-between mb-1">
+          <span class="font-medium">Graphic Design</span>
+          <span>80%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-indigo-600 h-2 rounded-full progress-bar" data-width="80%"></div>
+        </div>
+      </div>
+
+      <div class="mb-6" data-aos="fade-right" data-aos-delay="200">
+        <div class="flex justify-between mb-1">
+          <span class="font-medium">CV & Resume Writing</span>
+          <span>95%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-indigo-600 h-2 rounded-full progress-bar" data-width="95%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h3 class="text-2xl font-bold mb-6">Career Timeline</h3>
+      <div class="border-l-4 border-indigo-600 pl-6">
+        <div class="mb-8 transition duration-500 ease-in-out transform hover:-translate-y-1" data-aos="fade-up">
+          <h4 class="font-semibold">2021</h4>
+          <p class="text-gray-600">Started freelancing and landed my first web development project.</p>
+        </div>
+        <div class="mb-8 transition duration-500 ease-in-out transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="font-semibold">2022</h4>
+          <p class="text-gray-600">Expanded to CV & Resume writing — helped 20+ clients secure interviews.</p>
+        </div>
+        <div class="mb-8 transition duration-500 ease-in-out transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="font-semibold">2023</h4>
+          <p class="text-gray-600">Delivered custom systems for local businesses, including hotel reservations, school management, and e-commerce.</p>
+        </div>
+        <div class="mb-8 transition duration-500 ease-in-out transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="font-semibold">2024</h4>
+          <p class="text-gray-600">Grew my brand ‘EditorDev’, added graphic design services, and collaborated with new industries.</p>
+        </div>
+        <div class="mb-8 transition duration-500 ease-in-out transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="font-semibold">2025</h4>
+          <p class="text-gray-600">Launching my own digital products, expanding partnerships, and mentoring junior developers and designers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Floating Vertical Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col items-center gap-2 z-50">
+  <!-- Floating Contact Icon -->
+  <a href="/pages/contact.html"
+     class="bg-indigo-600 text-white rounded-full w-10 aspect-square flex items-center justify-center shadow-lg hover:bg-indigo-700 transition">
+    <i class="uil uil-envelope text-xl"></i>
+  </a>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/233594289300" target="_blank"
+     class="bg-green-500 text-white rounded-full w-10 aspect-square flex items-center justify-center shadow-lg hover:bg-green-600 transition">
+    <i class="uil uil-whatsapp text-xl"></i>
+  </a>
+</div>
+
+
+   <!-- Footer pinned at bottom -->
+  <footer class="bg-gray-900 text-gray-100 mt-auto">
+    <div class="container mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <p class="text-sm">&copy; 2025 EditorDev. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-indigo-400 transition">LinkedIn</a>
+        <a href="#" class="hover:text-indigo-400 transition">GitHub</a>
+        <a href="#" class="hover:text-indigo-400 transition">Fiverr</a>
+      </div>
+    </div>
+  </footer>
+
+    <!-- External JS -->
+       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
