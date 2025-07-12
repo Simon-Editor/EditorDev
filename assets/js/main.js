@@ -176,10 +176,13 @@ AOS.init({
 });
 
 // Loader fade out
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('preloader');
-  loader.style.opacity = '0';
-  loader.style.pointerEvents = 'none';
-  loader.style.transition = 'opacity 0.5s ease-out';
-  setTimeout(() => loader.remove(), 500);
+  if (loader) {
+    loader.style.opacity = '0';
+    loader.style.pointerEvents = 'none';
+    loader.style.transition = 'opacity 0.5s ease-out';
+    setTimeout(() => loader.remove(), 500);
+  }
 });
+
