@@ -186,3 +186,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+
+// ✅ Init EmailJS once
+(function() {
+  emailjs.init("1UBpiix9SzyH-WXf2"); // ← Your actual Public Key
+})();
+
+// ✅ Handle contact form submit on all pages
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_qgrlu8n",    // Your Service ID
+      "template_95s9ood",   // Your Template ID
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully!");
+        contactForm.reset();
+      },
+      function (error) {
+        console.log("FAILED...", error);
+        alert("Something went wrong. Please try again!");
+      }
+    );
+  });
+}
