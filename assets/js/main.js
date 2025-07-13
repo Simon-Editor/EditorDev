@@ -79,64 +79,6 @@ setInterval(rotateSkillColors, 5000);
 rotateSkillColors(); // Run immediately
 
 
-/* ----- HANDLE CONTACT FORM SUBMISSION ----- */
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize EmailJS
-  (function () {
-    emailjs.init("0ZSQiz7mddhkqaZZg"); // Replace with your actual EmailJS Public Key
-  })();
-
-  const contactForm = document.getElementById("contactForm");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the form from reloading the page
-
-      // Get form input values
-      const name = document.querySelector("#from_name").value.trim();
-      const email = document.querySelector("#reply_to").value.trim();
-      const message = document.querySelector("#message").value.trim();
-
-      // Select popup elements
-      const successPopup = document.getElementById("successMessage");
-      const errorPopup = document.getElementById("errorMessage");
-
-      // Validation: Check if fields are empty
-      if (!name || !email || !message) {
-        errorPopup.style.display = "block"; // Show error popup
-        setTimeout(() => {
-          errorPopup.style.display = "none"; // Hide after 3 seconds
-        }, 3000);
-        return; // Stop further execution if validation fails
-      }
-
-      // Send the form using EmailJS
-      emailjs
-        .sendForm("service_qgrlu8n", "template_95s9ood", this, "0ZSQiz7mddhkqaZZg")
-        .then(
-          function (response) {
-            console.log("SUCCESS via EmailJS!", response.status, response.text);
-            successPopup.style.display = "block"; // Show success popup
-            setTimeout(() => {
-              successPopup.style.display = "none"; // Hide after 3 seconds
-            }, 3000);
-            contactForm.reset(); // Reset form fields
-          },
-          function (error) {
-            console.error("FAILED via EmailJS...", error);
-            errorPopup.style.display = "block"; // Show error popup
-            setTimeout(() => {
-              errorPopup.style.display = "none"; // Hide after 3 seconds
-            }, 3000);
-          }
-        );
-    });
-  } else {
-    console.error("#contactForm element not found");
-  }
-});
-
-
 /*  Animate Numbers & Progress Bars  */
 
     const counters = document.querySelectorAll('.counter');
@@ -188,25 +130,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ✅ Init EmailJS once
+
+// ✅ Init EmailJS once with your new Public Key
 (function() {
-  emailjs.init("1UBpiix9SzyH-WXf2"); // ← Your actual Public Key
+  emailjs.init("3fwYJ26aosfMC2qpq");
 })();
 
-// ✅ Handle contact form submit on all pages
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("Sending form...");
 
-    emailjs.sendForm(
-      "service_qgrlu8n",    // Your Service ID
-      "template_95s9ood",   // Your Template ID
-      this
+    emailjs.send(
+      "service_qgrlu8n",
+      "template_95s9ood",
+      {
+        from_name: document.getElementById("from_name").value,
+        reply_to: document.getElementById("reply_to").value,
+        message: document.getElementById("message").value
+      }
     ).then(
       function () {
-        alert("Message sent successfully!");
+        // ✅ Show success message
+        const successMessage = document.getElementById("successMessage");
+        successMessage.style.display = "block";
+
+        // ✅ Hide after 5 seconds
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+
         contactForm.reset();
       },
       function (error) {
