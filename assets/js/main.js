@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 // ✅ Init EmailJS once with your new Public Key
 (function() {
   emailjs.init("3fwYJ26aosfMC2qpq");
@@ -153,15 +152,7 @@ if (contactForm) {
       }
     ).then(
       function () {
-        // ✅ Show success message
-        const successMessage = document.getElementById("successMessage");
-        successMessage.style.display = "block";
-
-        // ✅ Hide after 5 seconds
-        setTimeout(() => {
-          successMessage.style.display = "none";
-        }, 5000);
-
+        showToast("Message sent successfully!");
         contactForm.reset();
       },
       function (error) {
@@ -170,4 +161,23 @@ if (contactForm) {
       }
     );
   });
+}
+
+// ✅ Toast pop-up function
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+
+  // ✅ Fade in
+  toast.style.opacity = "1";
+
+  // ✅ Hide after 5 seconds
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    // Wait for fade out transition, then hide
+    setTimeout(() => {
+      toast.style.display = "none";
+    }, 500);
+  }, 5000);
 }
