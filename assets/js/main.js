@@ -130,17 +130,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
 // ✅ Init EmailJS once with your new Public Key
 (function() {
   emailjs.init("3fwYJ26aosfMC2qpq");
 })();
 
 const contactForm = document.getElementById("contactForm");
+const sendButton = document.getElementById("sendButton"); // Make sure your button has id="sendButton"
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("Sending form...");
+
+    // ✅ Disable the button to prevent multiple clicks
+    sendButton.disabled = true;
+    sendButton.textContent = "Sending...";
 
     emailjs.send(
       "service_qgrlu8n",
@@ -154,10 +161,18 @@ if (contactForm) {
       function () {
         showToast("Message sent successfully!");
         contactForm.reset();
+
+        // ✅ Re-enable button
+        sendButton.disabled = false;
+        sendButton.textContent = "Send";
       },
       function (error) {
         console.log("FAILED...", error);
         alert("Something went wrong. Please try again!");
+
+        // ✅ Re-enable button
+        sendButton.disabled = false;
+        sendButton.textContent = "Send";
       }
     );
   });
@@ -168,14 +183,10 @@ function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.style.display = "block";
-
-  // ✅ Fade in
   toast.style.opacity = "1";
 
-  // ✅ Hide after 5 seconds
   setTimeout(() => {
     toast.style.opacity = "0";
-    // Wait for fade out transition, then hide
     setTimeout(() => {
       toast.style.display = "none";
     }, 500);
