@@ -30,18 +30,18 @@
   <!-- Header -->
   <header class="shadow sticky top-0 z-50 bg-white">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="../index.html" class="flex items-center space-x-2">
-        <img src="../assets/images/Logo.png" alt="EditorDev Logo" class="h-8 md:h-10">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/images/Logo.png" alt="EditorDev Logo" class="h-8 md:h-10">
         <span class="font-bold text-lg md:text-xl text-indigo-600">EditorDev</span>
       </a>  
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href=".../assets/files/EditorDev-CV.pdf" download class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Download CV</a>
+        <a href="assets/files/EditorDev-CV.pdf" download class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Download CV</a>
       </nav>
 
       <!-- Mobile Toggle -->
@@ -57,12 +57,12 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 md:hidden px-6">
       <nav class="flex flex-col space-y-4 py-4">
-        <a href="../index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="../assets/files/EditorDev-CV.pdf" download 
+        <a href="assets/files/EditorDev-CV.pdf" download 
            class="inline-block w-auto bg-indigo-600 text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-indigo-700 transition self-start">
           Download CV
         </a>
@@ -88,11 +88,13 @@
         <div class="bg-white shadow-md rounded-2xl p-8 mb-8 md:mb-0 w-full md:w-1/2 text-center" data-aos="fade-up" data-aos-delay="100">
           <h3 class="text-xl font-semibold mb-4">My introduction</h3>
           <p class="text-gray-600 mb-6">
-            I am well-versed in HTML, CSS and JavaScript, and other cutting edge frameworks and libraries,
-            which allows me to implement interactive features. Additionally, I have experience working with
-            content management systems (CMS) like WordPress. I am also a professional CV & Resume Writer.
+            I am highly proficient in HTML, CSS, JavaScript, and modern front-end frameworks, enabling me to build responsive, 
+            interactive, and user-focused web applications. I also have extensive experience working with Content Management 
+            Systems such as WordPress, allowing me to design, customize, and manage dynamic websites efficiently. 
+            In addition to web development, I am a professional CV and résumé writer, helping individuals present 
+            their skills and experience effectively for career advancement.
           </p>
-          <a href="../assets/files/EditorDev-CV.pdf" download
+          <a href="assets/files/EditorDev-CV.pdf" download
             class="bg-indigo-600 text-white px-6 py-3 rounded-full inline-flex items-center gap-2 hover:bg-indigo-700 transition">
             Download CV 
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,8 +113,8 @@
               <span class="skill-badge">HTML</span>
               <span class="skill-badge">CSS</span>
               <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">WordPress</span>
               <span class="skill-badge">JavaScript</span>
-              <span class="skill-badge">React</span>
               <span class="skill-badge">Node.js</span>
               <span class="skill-badge">CV & Resume Writer</span>
             </div>
@@ -128,6 +130,16 @@
               <span class="skill-badge">C++</span>
             </div>
           </div>
+
+          <!-- Mobile App -->
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Mobile App</h4>
+          <div class="flex flex-wrap gap-2 skill-group">
+            <span class="skill-badge">React / React Native</span>
+            <span class="skill-badge">Flutter</span>
+            <span class="skill-badge">Kotlin</span>
+          </div>
+        </div>
 
           <!-- Database -->
           <div>
@@ -216,19 +228,27 @@
 
 
   <!-- Footer stays at bottom -->
-  <footer class="bg-gray-900 text-gray-100">
-    <div class="container mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-      <p class="text-sm">&copy; 2025 EditorDev. All rights reserved.</p>
-      <div class="space-x-4">
-        <a href="#" class="hover:text-indigo-400 transition">LinkedIn</a>
-        <a href="#" class="hover:text-indigo-400 transition">GitHub</a>
-        <a href="#" class="hover:text-indigo-400 transition">Fiverr</a>
-      </div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-100">
+  <div class="container mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+    
+    <p class="text-sm">&copy; <span id="year"></span> EditorDev. All rights reserved.</p>
+
+    <div class="space-x-4">
+      <a href="#" class="hover:text-indigo-400 transition">LinkedIn</a>
+      <a href="#" class="hover:text-indigo-400 transition">GitHub</a>
+      <a href="#" class="hover:text-indigo-400 transition">Fiverr</a>
     </div>
-  </footer>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
   <!-- External JS -->
      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
